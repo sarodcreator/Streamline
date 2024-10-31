@@ -1,0 +1,4 @@
+# ignore all the video files
+
+/backend/api/v1/video_dir
+/frontend/node_modules
