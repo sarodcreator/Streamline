@@ -57,3 +57,26 @@
 .movierow .rowposter_large:hover {
     transform: scale(1.8);
 }
+
+.movieDetail {
+  padding: 20px;
+  color: white;
+}
+
+.userRating {
+  margin-top: 10px;
+}
+
+.comments {
+  margin-top: 20px;
+}
+
+.comment {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.commentInput input {
+  margin-right: 5px;
+}
