@@ -1,59 +1,59 @@
 import React, { useState, useEffect } from 'react';
-import instance from './URL';
-import './row.css';
+import { useParams } from 'react-router-dom';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
+import instance from './URL';
 
 const base_Url = "https://image.tmdb.org/t/p/original/";
 
-
-function Row({ title, fetchUrl, isLargeRow }) {
-  const [movies, setMovies] = useState([]);
+function MovieDetail() {
+  const { id } = useParams();
+  const [movie, setMovie] = useState({});
   const [trailerUrl, setTrailerUrl] = useState("");
+  const [comments, setComments] = useState([]); // Placeholder for comments
+
   useEffect(() => {
-    async function fetchData() {
-      const request = await instance.get(fetchUrl);
-      setMovies(request.data.results);
-      console.log(request);
+    async function fetchMovie() {
+      const request = await instance.get(`/movie/${id}`);
+      setMovie(request.data);
       return request;
     }
-    fetchData();
-  }, [fetchUrl]);
+    fetchMovie();
+  }, [id]);
 
-  const opts ={
-    height: "400",
-    width: "100",
-    playerVars: {
-      autoplay: 1,
-    },
-  };
-
-  const handleClick = (movie) => {
-    if (trailerUrl) {
-      setTrailerUrl("");
-    } else {
-      movieTrailer(movie?.name || "")
+  useEffect(() => {
+    movieTrailer(movie?.name || movie?.title || "")
       .then((url) => {
-        const UrlParams = new URLSearchParams(new URL(url).search);
-        setTrailerUrl(UrlParams.get('v'));
+        const urlParams = new URLSearchParams(new URL(url).search);
+        setTrailerUrl(urlParams.get("v"));
       })
       .catch((error) => console.log(error));
-    }
+  }, [movie]);
+
+  const opts = {
+    height: "400",
+    width: "100%",
+    playerVars: { autoplay: 1 },
   };
 
   return (
-    <div className='movierow'>
-      <h2>{title}</h2>
-      <div className="row_poster">
-        {/*several row posters*/}
-        {movies.map(movie => (
-          <img key={movie.id} onClick={() => handleClick(movie)} src={`${base_Url}${isLargeRow ? movie.poster_path : movie.poster_path}`} alt={movie.name} />
-        ))};
-      </div>
+    <div className="movieDetail">
+      <h1>{movie.title || movie.name}</h1>
+      <p>{movie.overview}</p>
+      <p>Rating: {movie.vote_average}</p>
+
       {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+      
+      {/* Comments Section */}
+      <div className="comments">
+        <h2>Comments</h2>
+        {/* Map through comments */}
+        {comments.map((comment, index) => (
+          <p key={index}>{comment}</p>
+        ))}
+      </div>
     </div>
   );
 }
 
-
-export default Row;
+export default MovieDetail;
