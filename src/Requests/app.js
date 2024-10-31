@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Row from './Row';
-import  Row from './Row';
+import MovieDetail from './MovieDetail';
 
 function App() {
   return (
