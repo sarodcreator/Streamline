@@ -1,0 +1,48 @@
+.whySec {
+    padding: 80px 100px;
+    display: block;
+    background-color: #121212;
+    justify-content: center;
+}
+
+.whySec h3 {
+    text-align: center;
+    color: #fcfcfc;
+    font-weight: 500px;
+}
+.whySec .cards {
+    display: flex;
+    margin-top: 24px;
+    gap: 16px;
+    justify-content: center;
+}
+
+.whySec .cards .card{
+    text-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 350px;
+    height: 284px;
+    background-color: #fcfcfc27;
+    border: none;
+    border-radius: 16px;
+}
+
+.whySec .cards .r, .whySec .cards .l {
+    margin-top: 19px;
+}
+
+.whySec .cards .card img {
+    margin-top: 40px;
+}
+
+.whySec .cards .card h4 {
+    margin-top: 20px;
+    color: #fcfcfc;
+    font-weight: 500px;
+}
+
+.whySec .cards .card p {
+    margin-top: 10px;
+    color: #a1a1a1;
+}

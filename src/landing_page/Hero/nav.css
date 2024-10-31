@@ -1,0 +1,110 @@
+.hero {
+    background-image: url(../../assets/hero.jpg);
+   padding: 80px 120px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+}
+
+.box {
+    background-color: hsla(0, 0%, 100%, 0.123);
+    padding: 80px;
+    border-radius: 30px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header img {
+    width: 172px;
+}
+
+.header .left {
+    left: 0;
+    display: flex;
+    gap: 8px;
+}
+.header .loginbtn {
+    background: transparent;
+    border-radius: 8px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    color: #fcfcfc;
+    border: 1px solid #fcfcfc;
+}
+
+.header .loginbtn:hover {
+    color: #fcfcfc;
+    background-color: #e50914;
+    border: none;
+}
+
+.content h1 {
+    color: #fcfcfc;
+    font-weight: 600px;
+    text-align: center;
+    margin: 100px auto 0;
+    text-wrap: wrap;
+    font-size: 48px;
+}
+
+.content p {
+    color: #a1a1a1;
+    font-size: 16px;
+    margin: 32px 0 16px;
+    text-align: center;
+}
+.content form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+.content form input{
+    border: 1px solid #a1a1a1;
+    border-radius: 8px;
+    width: 391px;
+    height: 56px;
+    align-items: center;
+    padding: 0 16px;
+    background-color: transparent;
+}
+
+.content form input::placeholder {
+    color: #6f6d6d;
+}
+
+.content form .registerbtn {
+    background-color: #e50914;
+    color: #fcfcfc;
+    align-items: center;
+    justify-content: center;
+    width: 161px;
+    height: 56px;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    gap: 16px;
+}
+
+.content form .registerbtn img {
+    width: 16px;
+    height: 16px;
+    margin: auto 0;
+}
+
+.closebtnn {
+    display: flex;
+    background-color: inherit;
+    color: #a1a1a1;
+    font-size: 12px;
+    border: none;
+    right: 100%;
+}
+.closebtnn:hover {
+    color:#fcfcfc;
+}

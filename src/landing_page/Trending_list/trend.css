@@ -1,0 +1,56 @@
+.trend {
+    justify-content: center;
+    padding: 80px 100px 0;
+}
+
+.trend h3 {
+    text-align: center;
+    font-weight: 500px;
+
+}
+
+.trend .location {
+    display: flex;
+    gap: 24px;
+    margin-top: 24px;
+    justify-content: center;
+}
+
+.trend .location .search {
+    display: flex;
+    border: 1px solid #6f6d6d;
+    border-radius: 8px;
+    height: 40px;
+    padding: 0 8px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.trend .location .search input {
+    background-color: transparent;
+    border: none;
+}
+
+.trend .location .search input:focus {
+    outline: transparent;
+    color: #fcfcfc;
+}
+
+.Rows {
+    display: flex;
+    align-items: center;
+}
+
+.Rows .nextbtn {
+    display: flex;
+    border: 1px solid #312f2f;
+    width: 80px;
+    height: 246px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.Rows .nextbtn:hover {
+    background-color: #6f6d6d;
+}

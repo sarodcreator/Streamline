@@ -1,0 +1,59 @@
+.movierow {
+    display: block;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 24px;
+    margin: 24px;
+}
+
+.movierow h2 {
+    font-size: 18px;
+    color: #fcfcfc;
+    margin-bottom: 8px;
+    font-weight: 500px;
+}
+
+.movierow::-webkit-scrollbar {
+    display: none;
+}
+
+.row_poster {
+    display: flex;
+    gap: 16px;
+}
+
+.row_poster img {
+    object-fit: contain;
+    width: 150px;
+    max-height: 300px;
+    transition: transform 450ms;
+    display: flex;
+    flex-direction: row;
+    border-radius: 8px;
+}
+
+.row_poster p {
+    color: #fcfcfc;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 500px;
+    position: absolute;
+    padding: 4px 8px;
+    background-color: rgba(0, 0, 0, 0.70);
+    border-radius: 4px;
+    top: 8px;
+    left: 8px;
+}
+
+.row_poster img:hover {
+    transform: scale(1.10);
+    margin: 8px;
+}
+
+.movierow .rowposter_large {
+    max-height: 450px;
+}
+
+.movierow .rowposter_large:hover {
+    transform: scale(1.8);
+}
