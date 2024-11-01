@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import instance from './URL';
 import './row.css';
+import './moviedetail.css';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
 
@@ -118,7 +119,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
             key={movie.id}
             onClick={() => handleClick(movie)}
             className={`row_poster_img ${isLargeRow && "row_posterLarge"}`}
-            src={`${base_Url}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
+            src={`${base_Url}${isLargeRow ? movie.poster_path : movie.poster_path}`}
             alt={movie.name || movie.title}
           />
         ))}

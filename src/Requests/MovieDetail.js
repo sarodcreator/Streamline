@@ -3,8 +3,9 @@ import { useParams, useNavigate } from 'react-router-dom';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
 import instance from './URL';
+import './moviedetail.css';
 
-const base_Url = "https://image.tmdb.org/t/p/original/";
+//const base_Url = "https://image.tmdb.org/t/p/original/";
 
 function MovieDetail() {
   const { id } = useParams();
@@ -46,16 +47,16 @@ function MovieDetail() {
 
   return (
     <div className="movieDetail">
-      <button onClick={() => navigate(-1)}>Back to list</button>
+      <button id='backbtn' onClick={() => navigate(-1)}>Back</button>
       {movie && (
         <>
-          <h1>{movie.title || movie.name}</h1>
-          <p>{movie.overview}</p>
-          <p>Rating: {movie.vote_average}</p>
+          <h1 className='title'>{movie.title || movie.name}</h1>
+          <p className='descriptions des'>{movie.overview}</p>
+          <h6 className='rating'>Rating: {movie.vote_average}</h6>
 
           {/* User Rating */}
           <div className="userRating">
-            <label htmlFor="rating">Your Rating: </label>
+            <label htmlFor="rating">Rate trailer?: </label>
             <input
               type="number"
               id="rating"
@@ -85,7 +86,7 @@ function MovieDetail() {
                 value={newComment}
                 onChange={(e) => setNewComment(e.target.value)}
               />
-              <button onClick={handleAddComment}>Submit</button>
+              <button className='commentInputButton' onClick={handleAddComment}>Submit</button>
             </div>
           </div>
         </>
