@@ -1,7 +1,6 @@
 .movierow {
     display: block;
     overflow-y: hidden;
-    overflow-x: scroll;
     padding: 24px;
     margin: 24px;
 }
@@ -20,6 +19,7 @@
 .row_poster {
     display: flex;
     gap: 16px;
+    overflow-x: scroll;
 }
 
 .row_poster img {
@@ -79,4 +79,29 @@
 
 .commentInput input {
   margin-right: 5px;
+}
+
+@media (max-width: 480px){
+  .movierow {
+    padding: 0;
+    margin: 40px 16px 0;
+    overflow-x: hidden;
+  }
+  .movierow h2 {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .row_poster {
+    overflow-x: scroll;
+  }
+  .row_poster::-webkit-scrollbar {
+    display: none;
+  }
+  .row_poster img:hover{
+    display: none;
+  }
+    .movierow .rowposter_large:hover {
+      display: none;
+    }
+
 }

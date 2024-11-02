@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './nav.css';
-import logo from '../../assets/Logonetflix.png'
+import logo from '../../assets/Logonetflix.png';
+import profile from '../../assets/profile-img.jpeg';
 
 function Nav() {
     const [show, handleShow] = useState(false);
@@ -20,7 +21,7 @@ function Nav() {
     return (
         <div className={`nav ${show && "nav_black"}`}>
             <img src={logo} alt="Netflix logo" className='nav_logo' />
-            <img src="https://pbs.twimg.com/profile_images/124011999041155" alt="profile" className='nav_avatar' />
+            <img src={ profile } className='nav_avatar' alt='profile icon'/>
         </div>
     )
 }

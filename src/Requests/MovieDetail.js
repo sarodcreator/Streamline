@@ -52,7 +52,7 @@ function MovieDetail() {
         <>
           <h1 className='title'>{movie.title || movie.name}</h1>
           <p className='descriptions des'>{movie.overview}</p>
-          <h6 className='rating'>Rating: {movie.vote_average}</h6>
+          <h5 className='rating' id='rate'>Rating: {movie.vote_average}</h5>
 
           {/* User Rating */}
           <div className="userRating">
@@ -76,7 +76,7 @@ function MovieDetail() {
             {comments.map((comment, index) => (
               <div key={index} className="comment">
                 <p>{comment}</p>
-                <button onClick={() => handleDeleteComment(index)}>Delete</button>
+                <button onClick={() => handleDeleteComment(index)}>X</button>
               </div>
             ))}
             <div className="commentInput">
