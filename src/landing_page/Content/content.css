@@ -46,3 +46,61 @@
     margin-top: 10px;
     color: #a1a1a1;
 }
+
+@media (max-width: 480px) {
+    .whySec {
+        padding: 40px 16px;
+    }
+    .whySec .cards {
+        display: block;
+        margin-top: 40px;
+    }
+    .whySec .cards .r, .whySec .cards .l {
+        margin-top: 0;
+    }
+    .whySec .cards .card {
+        padding: 0 24px;
+        margin-bottom: 8px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .whySec .cards .card h4 {
+        font-size: 18px;
+    }
+        .whySec .cards .card p {
+            font-size: 14px;
+        }
+}
+
+@media (min-width: 481px) and (max-width: 720px) {
+    .whySec {
+        padding: 40px 16px;
+    }
+
+    .whySec .cards {
+        display: block;
+        margin-top: 40px;
+    }
+
+    .whySec .cards .r,
+    .whySec .cards .l {
+        margin-top: 0;
+    }
+
+    .whySec .cards .card {
+        padding: 0 24px;
+        margin-bottom: 8px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .whySec .cards .card h4 {
+        font-size: 18px;
+    }
+
+    .whySec .cards .card p {
+        font-size: 14px;
+    }
+}

@@ -6,8 +6,12 @@ import Lang from '../components/dropdowns';
 import arrowright from '../../assets/arrow-right.png';
 import { useModal } from '../components/Modal';
 import Style from '../components/Modalstyle';
+import Register from '../components/signup';
 
 const Hero = () => {
+    const HandleSignUp = () => {
+        <Register />
+    }
     const { isModalOpen, Open, Close  } = useModal();
     return (
         <div className="hero">
@@ -15,7 +19,7 @@ const Hero = () => {
                 <div className="header">
                     <img src={logonetflix} alt="netflix logo" />
                     <div className="left">
-                        < Lang />
+                        <div className='lang_btn'>< Lang /></div>
                         <button className='loginbtn' onClick={Open}>Login</button> 
                     </div>
                 </div>
@@ -24,7 +28,7 @@ const Hero = () => {
                     <p>Watch for free, Ready to Watch?</p>
                     <form action="">
                     <input type="email" className='email' placeholder='Email Address'/>
-                    <button className="registerbtn">Get Started <img src= { arrowright } alt="" /></button>
+                    <button className="registerbtn" onClick={() =>  HandleSignUp }>Get Started <img src= { arrowright } alt="" /></button>
                     </form>
                 </div>
             </div>

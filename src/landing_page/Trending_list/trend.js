@@ -20,7 +20,7 @@ const Trend = () => {
                 </div>
             </div>
             <div className="Rows">
-                <Row title='Trending' fetchUrl={Requests.fetchTrending.slice(0, 10)} className='list_items' />
+                <Row title='Trending' fetchUrl={Requests.fetchTrending} className='list_items' />
                 <div className="nextbtn">
                     <img src={Next} alt="" />
                 </div>

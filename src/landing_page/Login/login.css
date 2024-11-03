@@ -57,3 +57,25 @@
     text-align: center;
     margin-top: -32px;
 }
+@media (max-width: 720px) {
+    .form {
+        padding: 24px 0;
+        background-color: #121212;
+    }
+    .form form input {
+        width: calc(100% - 17px);
+    }
+    .form form input::placeholder{
+        color: #6f6d6d;
+    }
+    .form form input::placeholder {
+        color: #6f6d6d;
+    }
+    .footnote{
+        font-size: 10px;
+        margin-top: 0;
+    }
+    .form p{
+    font-size: 14px;
+    }        
+}

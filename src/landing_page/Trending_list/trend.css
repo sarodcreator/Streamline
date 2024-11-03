@@ -54,3 +54,22 @@
 .Rows .nextbtn:hover {
     background-color: #6f6d6d;
 }
+
+@media (max-width: 480px) {
+    .trend {
+        padding: 0 16px;
+    }
+    .Rows .nextbtn {
+        display: none;
+    }
+    .Rows{
+        width: 100%;
+        padding: 0 -16px;
+    }
+    .trend .location {
+        flex-direction: column;
+    }
+    .trend .type {
+        display: none;
+    }
+}

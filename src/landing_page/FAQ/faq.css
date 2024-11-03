@@ -33,3 +33,22 @@
     font-weight: 400px;
     font-size: 16px;
 }
+
+@media (max-width: 480px) {
+    .faq {
+        padding: 40px 16px;
+    }
+    .faq h3 {
+        text-align: left;
+    }
+    .faq .faq-list {
+        width: calc(100%-32px);
+    }
+    .faq .faq-list .faq-question {
+        font-size: 16px
+    }
+    .faq .faq-list .faq-item {
+        width: calc(100% - 32px);
+
+    }
+}

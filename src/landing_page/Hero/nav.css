@@ -1,6 +1,6 @@
 .hero {
     background-image: url(../../assets/hero.jpg);
-   padding: 80px 120px;
+    padding: 80px 120px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -107,4 +107,46 @@
 }
 .closebtnn:hover {
     color:#fcfcfc;
+}
+
+@media (max-width: 480px){
+    .hero {
+        padding: 0;
+        box-sizing: border-box;
+        background-image: linear-gradient(180deg, rgb(0, 0, 0, 0.68), #121212, url(../../assets/hero.jpg));
+    }
+    .box {
+        padding: 24px 16px;
+        background-color: transparent;
+    }
+    .lang_btn {
+        display: none;
+    }
+    .header img {
+        width: 30%;
+        height: 32px;
+    }
+    .content h1 {
+        font-size: 32px;
+        margin-top: 200px;
+    }
+    .content p {
+        font-size: 14px;
+    }
+    .content form {
+        flex-direction: column;
+    }
+    .content form input {
+        width: calc(100% - 32px);
+        margin-bottom: 8px;
+        margin-top: 16px
+    }
+    .content form .registerbtn {
+        width: 100%;
+    }
+    .header .loginbtn {
+        border: none;
+        padding: 0;
+        margin-bottom: 40px;
+    }
 }
