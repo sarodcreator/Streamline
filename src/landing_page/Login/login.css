@@ -57,25 +57,39 @@
     text-align: center;
     margin-top: -32px;
 }
-@media (max-width: 720px) {
+@media (max-width: 480px) {
     .form {
         padding: 24px 0;
-        background-color: #121212;
+        background-color: transparent;
+        box-sizing: border-box;
+        height: 200px;
+    }
+    .form h2 {
+        color: #121212;
+    }
+    .form form {
+        display: flex;
+        flex-direction: column;
     }
     .form form input {
         width: calc(100% - 17px);
+        margin: 0 !important;
     }
     .form form input::placeholder{
         color: #6f6d6d;
     }
     .form form input::placeholder {
-        color: #6f6d6d;
+        color: #858585;
     }
     .footnote{
-        font-size: 10px;
-        margin-top: 0;
+        font-size: 10px !important;
+        margin-top: 0 !important;
     }
     .form p{
     font-size: 14px;
-    }        
+    margin-bottom: 8px;
+    } 
+    .form form button {
+        margin-bottom: -40px;
+    }       
 }

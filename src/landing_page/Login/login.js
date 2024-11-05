@@ -1,8 +1,9 @@
 import React from 'react';
 import './login.css';
-import Home from '../../Homepage/Movies/movies'
+
 
 const login = () => {
+  
   return (
     <div className='form'>
       <h2>Login</h2>
@@ -17,7 +18,7 @@ const login = () => {
           <label htmlFor="Password">Password</label>
           <input type="password" name='password' placeholder='Password' id='password' required />
         </div>
-        <button type='submit' onClick={() => ({ Home })}>Log In</button>
+        <button type='submit' onClick={() => ({})}>Log In</button>
         <p className='footnote'>By clicking you have agreed to our terms and<br /> conditions</p>
       </form>
     </div >

@@ -21,6 +21,7 @@ const Modalstyle = (isMobile) => ({
         right: 'auto',
         bottom: 'auto',
         marginRight: '-50%',
+        height: 'auto',
         transform: 'translate(-50%, -50%)',
         padding: isMobile ? '16px' : '20px',
         borderRadius: '16px',

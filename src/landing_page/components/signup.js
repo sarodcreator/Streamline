@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const Register = () => {
+
     const [isSignUpOpen, setSignUpOpen] = useState(false);
     const [isForgotPasswordOpen, setForgotPasswordOpen] = useState(false);
     const [passwordError, setPasswordError] = useState('');
@@ -61,7 +62,7 @@ const Register = () => {
                                 <input type="password" id="password" name="password" required />
                                 {passwordError && <span className="error-message">{passwordError}</span>}
                             </div>
-                            <button type="submit" className="submit-btn">Sign Up</button>
+                            <button type="submit" className="submit-btn" onClick={() => ({})}>Sign Up</button>
                             <span className="forgot-password" onClick={() => openModal('forgotPassword')}>Forgot Password?</span>
                         </form>
                     </div>

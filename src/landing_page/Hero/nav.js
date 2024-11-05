@@ -7,10 +7,12 @@ import arrowright from '../../assets/arrow-right.png';
 import { useModal } from '../components/Modal';
 import Style from '../components/Modalstyle';
 import Register from '../components/signup';
+import { useState } from 'react';
 
 const Hero = () => {
+    const [showRegister, setShowRegister] = useState(false);
     const HandleSignUp = () => {
-        <Register />
+        setShowRegister(true);
     }
     const { isModalOpen, Open, Close  } = useModal();
     return (
@@ -28,7 +30,8 @@ const Hero = () => {
                     <p>Watch for free, Ready to Watch?</p>
                     <form action="">
                     <input type="email" className='email' placeholder='Email Address'/>
-                    <button className="registerbtn" onClick={() =>  HandleSignUp }>Get Started <img src= { arrowright } alt="" /></button>
+                    <button className="registerbtn" onClick={ () => (HandleSignUp) }>Get Started <img src= { arrowright } alt="" /></button>
+                    {showRegister && <Register />}
                     </form>
                 </div>
             </div>
