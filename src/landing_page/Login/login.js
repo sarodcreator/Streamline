@@ -3,7 +3,7 @@ import './login.css';
 import Movies from '../../Homepage/Movies/movie.js';
 
 
-const login = () => {
+const Login = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = () => {
@@ -36,4 +36,4 @@ const login = () => {
   )
 }
 
-export default login;
+export default Login;
