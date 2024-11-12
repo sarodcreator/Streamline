@@ -1,15 +1,20 @@
 import React from 'react';
-//import Home from './Homepage/Movies/movies';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Hero from './components/Hero';
+import Home from './components/Home';
+import Footer from './landing_page/Footer/footer';
 import './App.css';
-//import  { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-//import Landingpage from './landing_page/Hero/nav';
-import Landing from './landing_page/app';
 
-function App () {
-
+const App = () => {
   return (
-    <Landing />
-  )
-}
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Hero} />
+        <Route path="/movies" component={Home} />
+      </Switch>
+      <Footer />
+    </Router>
+  );
+};
 
 export default App;
