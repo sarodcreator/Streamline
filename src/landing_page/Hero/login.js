@@ -1,33 +1,47 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import axios from 'axios';
 import './login.css';
 
-const Login = () => {
-  const [Email, SetEmail] = useState("");
-  const [Password, Setpassword] = useState ("");
+const Login = ({ onLogin }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleClick = (e) => {
+  const handleLoginSubmit = async (e) => {
     e.preventDefault();
-    let test = {Email, Password};
-    console.log(test)
-  }
+
+    try {
+      const response = await axios.post('/login', { email, password });
+      document.cookie = `session_id=${response.data.session_id}`;  // Store session_id in cookies
+      onLogin();  // Notify parent component that the user is logged in
+    } catch (error) {
+      alert('Invalid credentials');
+    }
+  };
+
   return (
     <div className='loginPage'>
-        <h1>Log In</h1>
-        <p>Your journey awaits, Login in to your account now</p>
-        <form onSubmit={handleClick}>
-            <label htmlFor="Email">Email:</label>
-            <input value={Email} onChange={e=>SetEmail(e.target.value)} type="email" id='Login_email' placeholder='johndoe@mail.com' />
-
-            <label htmlFor="Password">Password:</label>
-            <input value={Password} onChange={e=>Setpassword(e.target.value)} type="password" id='Login_password' placeholder='Password' />
-
-            <div className='checkBox'><input type="checkbox" /><p>By clicking you agree to our rules and conditions.</p></div>
-
-            <button>Login</button>
-            <p>Dont't have an account? <span>Sign Up</span></p>
-        </form>
+      <h1>Log In</h1>
+      <form onSubmit={handleLoginSubmit}>
+        <label htmlFor="email">Email:</label>
+        <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          type="email"
+          id="Login_email"
+          placeholder="johndoe@mail.com"
+        />
+        <label htmlFor="password">Password:</label>
+        <input
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          type="password"
+          id="Login_password"
+          placeholder="Password"
+        />
+        <button>Login</button>
+      </form>
     </div>
-  )
-}
+  );
+};
 
 export default Login;
