@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 
 const Register = () => {
 
+    const [userName, SetUserName] = useState("");
+    const [Password, SetPassword] = useState("");
+    const [Email, SetEmail] = useState("");
+
     const [isSignUpOpen, setSignUpOpen] = useState(false);
     const [isForgotPasswordOpen, setForgotPasswordOpen] = useState(false);
     const [passwordError, setPasswordError] = useState('');
@@ -32,6 +36,8 @@ const Register = () => {
             alert('Sign-Up Form submitted!');
             closeModal('signUp');
         }
+        const data = {userName, Password, Email};
+        console.log(data);
     };
 
     const handleForgotPasswordSubmit = (event) => {
@@ -51,15 +57,15 @@ const Register = () => {
                         <form onSubmit={handleSignUpSubmit}>
                             <div className="form-group">
                                 <label htmlFor="username">Username</label>
-                                <input type="text" id="username" name="username" required />
+                                <input value={userName} onChange={event=>SetUserName(event.target.value)} type="text" id="username" name="username" required />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="email">Email</label>
-                                <input type="email" id="email" name="email" required />
+                                <input  value={Email} onChange={event=>SetEmail(event.target.value)} type="email" id="email" name="email" required />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="password">Password</label>
-                                <input type="password" id="password" name="password" required />
+                                <input  value={Password} onChange={event=>SetPassword(event.target.value)} type="password" id="password" name="password" required />
                                 {passwordError && <span className="error-message">{passwordError}</span>}
                             </div>
                             <button type="submit" className="submit-btn" onClick={() => ({})}>Sign Up</button>

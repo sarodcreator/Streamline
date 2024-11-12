@@ -80,6 +80,26 @@
 .commentInput input {
   margin-right: 5px;
 }
+.Rows .row_poster figure p {
+  position:relative;
+  font-size: 100px;
+  color: #121212;
+  text-align: left;
+  background-color: transparent;
+  -webkit-text-stroke: 3px #fcfcfc;
+  margin: -121px 0px 0px -40px;
+  align-items: center;
+  letter-spacing: -6px;
+  z-index: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.Rows .row_poster figure img {
+  z-index: 1;
+}
+.items{
+  object-fit: contain;
+  margin: 0 16px;
+}
 
 @media (max-width: 480px){
   .movierow {
@@ -97,11 +117,14 @@
   .row_poster::-webkit-scrollbar {
     display: none;
   }
+  
   .row_poster img:hover{
     display: none;
   }
     .movierow .rowposter_large:hover {
       display: none;
     }
-
+    .trend {
+    margin-top: 24px;
+  }
 }

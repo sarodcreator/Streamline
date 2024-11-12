@@ -69,6 +69,7 @@ function Banner() {
                             width: '100%',
                             border: 'none',
                             borderRadius: '8px',
+                            height: '550px',
                         }}
                     />
                 )}

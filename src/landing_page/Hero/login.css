@@ -1,0 +1,87 @@
+.loginPage {
+    position:absolute;
+    top: 25%;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 1;
+    color: #fcfcfc;
+    padding: 24px;
+    background-color: #121219;
+    border-radius: 16px;
+    object-fit: contain;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+.loginPage h1 {
+    font-weight: 600px;
+    margin-bottom: 16px;
+}
+.loginPage p {
+    font-size: 13px;
+    color: #6f6d6d;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 16px;
+}
+
+.loginPage Input{
+    width: calc(100%-16px);
+    padding: 0 16px;
+    height: 52px;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid #6f6d6d;
+}
+.loginPage input:focus {
+    border: none;
+    background-color: #fcfcfc;
+    outline: none;
+    color:#121212
+}
+.loginPage input::placeholder {
+    color: #6f6d6d;
+    opacity: 0.5;
+}
+.loginPage label {
+    font-size: 14px;
+    color:#6f6d6d;
+    text-align: left;
+    margin-bottom: 4px;
+    margin-top: 16px;
+}
+.checkBox {
+    display: flex;
+    gap: 8px;
+    width:100%;
+    margin-top: 8px;
+}
+.checkBox input {
+    width: 16px;
+    height: 16px;
+}
+.checkBox p {
+    text-align: left;
+    margin-left: -2px;
+    width: 100%;
+    font-size: 11px;
+}
+button {
+    margin: 16px 0 6px;
+    background-color: red;
+    height: 52px;
+    color: #fcfcfc;
+    outline: none;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+}
+span {
+    color: #fcfcfc;
+}
+span:hover {
+    text-decoration: underline;
+}

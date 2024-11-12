@@ -1,5 +1,5 @@
 import React from 'react';
-import Trend from './Trending_list/trend'
+import Trend from './Trending_list/tranding'
 import Content from './Content/content';
 import Hero from './Hero/nav';
 import Faq from './FAQ/faq';

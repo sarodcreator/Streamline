@@ -21,7 +21,17 @@ function Home() {
                     <Row title='Horror' fetchUrl={Requests.fetchHorrorMovies} />
                     <Row title='Romance' fetchUrl={Requests.fetchRomanceMovies} />
                     <Row title='Top Rated' fetchUrl={Requests.fetchTopRated} />
-                    <Row title='Trending' fetchUrl={Requests.fetchTopRated} />
+                    <Row title='Adventure' fetchUrl={Requests.fetchAdventureMovies} />
+                    <Row title='Dramas' fetchUrl={Requests.fetchDramaMovies} />
+                    <Row title='Animations' fetchUrl={Requests.fetchAnimatedMovies} />
+                    <Row title='Fantasy' fetchUrl={Requests.fetchFantasyMovies} />
+                    <Row title='Family' fetchUrl={Requests.fetchFamilyMovies} />
+                    <Row title='Anime' fetchUrl={Requests.fetchAnimeShows} />
+                    <Row title='Back in Time' fetchUrl={Requests.fetchHistoryMovies} />
+                    <Row title='Sing Along' fetchUrl={Requests.fetchMusicMovies} />
+                    <Row title='Trending' fetchUrl={Requests.fetchMysteryMovies} />
+                    <Row title='Action' fetchUrl={Requests.fetchGameShows} />
+                    <Row title='Documentary' fetchUrl={Requests.fetchKidsMovies} />
                 </div>
             </div>
             <Footer />

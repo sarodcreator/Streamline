@@ -1,8 +1,12 @@
 import React from 'react';
-import Landing from './landing_page/app';
+//import Home from './Homepage/Movies/movies';
 import './App.css';
+//import  { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+//import Landingpage from './landing_page/Hero/nav';
+import Landing from './landing_page/app';
 
-const App = () => {
+function App () {
+
   return (
     <Landing />
   )
