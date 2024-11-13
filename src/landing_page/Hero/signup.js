@@ -11,7 +11,7 @@ const Signup = ({ onClose }) => {
     e.preventDefault();
 
     try {
-      await axios.post('net4flix/signup', { userName, email, DOB, password });
+      await axios.post('http://localhost:3000/netflix/signup', { userName, email, DOB, password });
       alert('Your Account has been  created successfully');
       onClose();  // Close the sign-up form after successful signup
     } catch (error) {

@@ -86,3 +86,13 @@ span {
 span:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 480px) {
+    .loginPage {
+        width: 80%;
+        left: 0%;
+        right: 0%;
+        margin: 0 auto;
+
+    }
+}

@@ -10,7 +10,7 @@ const Login = ({ onLogin }) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('net4flix/login', { email, password });
+      const response = await axios.post('/Netflix/login', { email, password });
       document.cookie = `session_id=${response.data.session_id}`;
       onLogin();
     } catch (error) {

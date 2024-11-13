@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 import Login from './login';
-import Signup from './signup';
 import './nav.css';
 import logonetflix from '../../assets/Logonetflix.png';
 import Lang from '../components/dropdowns';
@@ -9,8 +9,8 @@ import arrowright from '../../assets/arrow-right.png';
 
 const Hero = () => {
   const [LogInForm, SetLoginForm] = useState(false);
-  const [signupForm, setSignupForm] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Check if there's a session (cookie) on load
@@ -21,11 +21,7 @@ const Hero = () => {
   }, []);
 
   const handleSignup = () => {
-    setSignupForm(true);
-  };
-
-  const handleSignUpOnClose = () => {
-    setSignupForm(false);
+    navigate("/signup")
   };
 
   const handleLogin = () => {
@@ -51,7 +47,6 @@ const Hero = () => {
             <form action="">
               <input type="email" className='email' placeholder='Email Address'/>
               <button className="registerbtn" type="button" onClick={handleSignup}>Get Started <img src={arrowright} alt="" /></button>
-              {signupForm && <Signup onClose={handleSignUpOnClose} />}
             </form>
           </div>
         </div>

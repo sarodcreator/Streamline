@@ -1,1 +1,41 @@
 /* styling starts here */
+.signupPage {
+    padding: 40px 100px;
+
+}
+h1{
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+label {
+    font-size: 14px;
+    color: #6f6f6d;
+    margin-bottom: 4px;
+}
+
+input {
+    height: 52px;
+    border-radius: 8px;
+    border: 1px solid #6f6f6d;
+    outline: none;
+    padding: 0 8px;
+    width: calc(100%-16px);
+}
+
+#date {
+    color: #6f6f6d;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+@media (max-width: 480px) {
+    .signupPage {
+        padding: 40px 16px;
+    }
+    #date{
+        width: 100%;
+        padding: 0;
+    }
+}
