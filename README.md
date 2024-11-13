@@ -11,6 +11,10 @@ __________________________________________________
 - 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Authors** 
+NickOnyino <bahatiluiz@gmail.com>
+
+Mojibola Olalekan <lekanmojibola@gmail.com>
 
 ## Available Scripts
 
