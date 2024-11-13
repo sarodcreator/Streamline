@@ -1,4 +1,14 @@
 # Getting Started with Create React App
+# Netflix_clone 
+Authors
+__________________________________________________ 
+- NickOnyino
+  <bahatiluiz@gmail.com>
+  frontend
+- Biragbara Baridoo
+  <sarobaridoo@gmail.com>
+  frontend 
+- 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
