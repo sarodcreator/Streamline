@@ -1,6 +1,7 @@
 .trend {
     justify-content: center;
     padding: 80px 100px 0;
+
 }
 
 .trend h3 {
@@ -14,6 +15,7 @@
     gap: 24px;
     margin-top: 24px;
     justify-content: center;
+    align-items: center;
 }
 
 .trend .location .search {
@@ -38,8 +40,23 @@
 
 .Rows {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    padding-top: 0;
+    gap: 8px;
 }
+
+.trend .location .type {
+    margin-top: 0 !important;
+    padding: 0;
+}
+
+.trend > .Rows > .trend {
+    margin-top: 0;
+    width: 100%;
+    height: 246px;
+}
+
 
 .Rows .nextbtn {
     display: flex;

@@ -1,9 +1,10 @@
 .loginPage {
     position:absolute;
     top: 25%;
+    width: 30%;
     right: 0;
-    left: 0;
-    margin: 0 auto;
+    left: 30%;
+    margin: 0 50px;
     text-align: center;
     z-index: 1;
     color: #fcfcfc;

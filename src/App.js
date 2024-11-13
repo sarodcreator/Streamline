@@ -1,18 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Hero from './components/Hero';
-import Home from './components/Home';
-import Footer from './landing_page/Footer/footer';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Homepage/Movies/movies';
+import Landing from './landing_page/app';
+import Signup from './landing_page/Hero/signup';
 import './App.css';
 
 const App = () => {
   return (
     <Router>
-      <Switch>
-        <Route exact path="/" component={Hero} />
-        <Route path="/movies" component={Home} />
-      </Switch>
-      <Footer />
+      <Routes>
+        <Route exact path="/" element={<Landing />} />
+        <Route path="/movies" element={<Home />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
     </Router>
   );
 };

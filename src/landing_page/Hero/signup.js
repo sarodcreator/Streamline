@@ -6,16 +6,16 @@ const Signup = ({ onClose }) => {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const [DOB, setDOB] = useState('');
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      await axios.post('/signup', { userName, email, password });
-      alert('User created successfully');
+      await axios.post('/signup', { userName, email, DOB, password });
+      alert('Your Account has been  created successfully');
       onClose();  // Close the sign-up form after successful signup
     } catch (error) {
-      alert('Error creating user');
+      alert('There was a problem, Try Again');
     }
   };
 
@@ -38,6 +38,14 @@ const Signup = ({ onClose }) => {
           type="email"
           id="email"
           placeholder="Enter email"
+        />
+        <label htmlFor="DOB">Date of Birth</label>
+        <input
+          value={DOB}
+          onChange={(e) => setDOB(e.target.value)}
+          type="date"
+          id="date"
+          placeholder="DD-MM-YYYY"
         />
         <label htmlFor="password">Password:</label>
         <input

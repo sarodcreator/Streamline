@@ -60,6 +60,8 @@
 }
 .content form {
     display: flex;
+    flex-direction: row;
+    width: 100%;
     align-items: center;
     gap: 8px;
     justify-content: center;
@@ -69,6 +71,7 @@
     border-radius: 8px;
     width: 391px;
     height: 56px;
+    width: 70%;
     align-items: center;
     padding: 0 16px;
     background-color: transparent;
@@ -90,6 +93,7 @@
     display: flex;
     gap: 16px;
     margin: auto 0;
+    width: 30%;
 }
 
 .content form .registerbtn img {

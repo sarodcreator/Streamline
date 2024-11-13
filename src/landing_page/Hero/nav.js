@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
-import Login from './Login';
-import Signup from './Signup';
+import { Navigate } from 'react-router-dom';
+import Login from './login';
+import Signup from './signup';
 import './nav.css';
 import logonetflix from '../../assets/Logonetflix.png';
 import Lang from '../components/dropdowns';
@@ -32,15 +32,10 @@ const Hero = () => {
     setIsAuthenticated(true);
   };
 
-  const handleLogout = () => {
-    document.cookie = 'session_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC;'; // Clear cookie
-    setIsAuthenticated(false);
-  };
-
   return (
     <div className="hero">
       {isAuthenticated ? (
-        <Redirect to="/movies" />
+        <Navigate to="/movies" />
       ) : (
         <div className="box">
           <div className="header">
@@ -55,7 +50,7 @@ const Hero = () => {
             <p>Watch for free, Ready to Watch?</p>
             <form action="">
               <input type="email" className='email' placeholder='Email Address'/>
-              <button className="registerbtn" onClick={handleSignup}>Get Started <img src={arrowright} alt="" /></button>
+              <button className="registerbtn" type="button" onClick={handleSignup}>Get Started <img src={arrowright} alt="" /></button>
               {signupForm && <Signup onClose={handleSignUpOnClose} />}
             </form>
           </div>

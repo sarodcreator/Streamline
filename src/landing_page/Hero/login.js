@@ -11,8 +11,8 @@ const Login = ({ onLogin }) => {
 
     try {
       const response = await axios.post('/login', { email, password });
-      document.cookie = `session_id=${response.data.session_id}`;  // Store session_id in cookies
-      onLogin();  // Notify parent component that the user is logged in
+      document.cookie = `session_id=${response.data.session_id}`;
+      onLogin();
     } catch (error) {
       alert('Invalid credentials');
     }
