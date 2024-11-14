@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './login.css';
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
@@ -16,6 +18,10 @@ const Login = ({ onLogin }) => {
     } catch (error) {
       alert('Invalid credentials');
     }
+  };
+
+  const handleBypass = () => {
+    navigate('/movies');
   };
 
   return (
@@ -38,8 +44,9 @@ const Login = ({ onLogin }) => {
           id="Login_password"
           placeholder="Password"
         />
-        <button>Login</button>
+        <button type="submit">Login</button>
       </form>
+      <button className="bypass-btn" onClick={handleBypass}>Bypass Login</button>
     </div>
   );
 };
