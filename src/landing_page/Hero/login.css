@@ -16,7 +16,7 @@
 form{
     display: flex;
     flex-direction: column;
-}
+} 
 .loginPage h1 {
     font-weight: 600px;
     margin-bottom: 16px;
@@ -85,6 +85,10 @@ span {
 }
 span:hover {
     text-decoration: underline;
+}
+
+.bypass-btn {
+    width: 100%;
 }
 
 @media (max-width: 480px) {
