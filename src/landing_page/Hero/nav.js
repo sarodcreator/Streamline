@@ -31,7 +31,7 @@ const Hero = () => {
   return (
     <div className="hero">
       {isAuthenticated ? (
-        <Navigate to="/movies" />
+        navigate("/movies")
       ) : (
         <div className="box">
           <div className="header">
