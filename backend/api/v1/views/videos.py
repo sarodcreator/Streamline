@@ -8,9 +8,7 @@ import html
 from models.video import Video
 import os
 import re
-
-video_views = Blueprint('video_views', __name__, url_prefix='/video')
-
+from api.v1.views import app_views
 
 # Go the endpoint below to test the streaming api,
 # the name of the variable should be the name of the video you want to stream without the extension
@@ -18,7 +16,7 @@ video_views = Blueprint('video_views', __name__, url_prefix='/video')
 # if not create the folder in the above location and add the video in the directory
 # NOTE: THIS ENDPOINT IS ONLY FOR TESTING
 
-@video_views.get("/testing/<name>", strict_slashes=False)
+@app_views.get("/testing/<name>", strict_slashes=False)
 def testing(name):
     """Just to test if the video streaming end point is working.
     To confirm that it is working, just go to this url
@@ -26,7 +24,7 @@ def testing(name):
     return render_template("index.html", name=name)
 
 
-@video_views.route("/play_video/<name>", strict_slashes=False, methods=["GET"])
+@app_views.route("/play_video/<name>", strict_slashes=False, methods=["GET"])
 def play_video(name):
     """
     Streams a vidoes with the name "name" to the user browser in chucks
@@ -58,7 +56,7 @@ def play_video(name):
     return response
 
 
-@video_views.route("/", methods=["POST"], strict_slashes=False)
+@app_views.route("/", methods=["POST"], strict_slashes=False)
 def add_video():
     """
     Add a new video to the database
@@ -110,7 +108,7 @@ def add_video():
     except Exception as e:
         abort(400, e)
         
-@video_views.route("/<id>", methods=["PUT"], strict_slashes=False)
+@app_views.route("/<id>", methods=["PUT"], strict_slashes=False)
 def update_video(id):
     """
     Update the data of the video object and save it to the database
@@ -137,7 +135,7 @@ def update_video(id):
     })
     
 
-@video_views.route("/", methods=["GET"], strict_slashes=False)
+@app_views.route("/", methods=["GET"], strict_slashes=False)
 def get_videos():
     """
     get all the videos in the database
@@ -152,7 +150,7 @@ def get_videos():
         abort(400, e)
 
 
-@video_views.route("/<id>", methods=["GET"], strict_slashes=False)
+@app_views.route("/<id>", methods=["GET"], strict_slashes=False)
 def get_video_by_id(id):
     """
     get a user by it id and return the video in json format

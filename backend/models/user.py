@@ -13,8 +13,6 @@ class User(BaseModel):
     email = Column(String(60), nullable=False)
     first_name = Column(String(60), nullable=False)
     last_name = Column(String(60), nullable=False)
-    other_names = Column(String(60), nullable=True)
-    gender = Column(String(60), nullable=False)
     user_name = Column(String(60), nullable=False)
     comments = relationship('Comment', back_populates='user')
 

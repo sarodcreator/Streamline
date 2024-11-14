@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """netflix app"""
-from api.v1.views import user_views, video_views
+from api.v1.views import app_views
 from flask import Flask, request, abort, jsonify
 import os
 from flask_cors import CORS
@@ -10,8 +10,7 @@ from api.v1.auth.session_auth import SessionAuth
 
 
 app = Flask(__name__)
-app.register_blueprint(user_views, url_prefix='/api/v1')
-app.register_blueprint(video_views, url_prefix="/api/v1")
+app.register_blueprint(app_views)
 CORS(app, resources={r'/netflix/*': {'cross-origin': '*'}})
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
@@ -42,7 +41,7 @@ def check_auth():
     if not auth:  # for devt
         return
 
-    excluded_path = ['/user/login/', '/user/signup/', '/user/forget_pwd/', '/user/reset_pwd']
+    excluded_path = ['/netflix/login/', '/netflix/signup/', '/netflix/forget_pwd/', '/netflix/reset_pwd']
     
     if not auth.require_auth(request.path, excluded_path):
         return

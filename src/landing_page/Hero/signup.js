@@ -6,12 +6,15 @@ const Signup = ({ onClose }) => {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [DOB, setDOB] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [passwordConfirm, setPasswordConfirm] = useState('');
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:3000/netflix/signup', { userName, email, DOB, password });
+      await axios.post('http://localhost:5000/netflix/signup', { user_name: userName,
+        email, first_name: firstName, password, last_name: lastName, password_confirm: passwordConfirm });
       alert('Your Account has been  created successfully');
       onClose();  // Close the sign-up form after successful signup
     } catch (error) {
@@ -23,6 +26,22 @@ const Signup = ({ onClose }) => {
     <div className="signupPage">
       <h1>Sign Up</h1>
       <form onSubmit={handleSignupSubmit}>
+        <label htmlFor="firstName">First Name</label>
+        <input
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+          type="text"
+          id="firstName"
+          placeholder="Enter your first name..."
+        />
+        <label htmlFor="lastName">Last Name:</label>
+        <input
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+          type="text"
+          id="lastName"
+          placeholder="Enter your last name..."
+        />
         <label htmlFor="userName">Username:</label>
         <input
           value={userName}
@@ -39,14 +58,7 @@ const Signup = ({ onClose }) => {
           id="email"
           placeholder="Enter email"
         />
-        <label htmlFor="DOB">Date of Birth</label>
-        <input
-          value={DOB}
-          onChange={(e) => setDOB(e.target.value)}
-          type="date"
-          id="date"
-          placeholder="DD-MM-YYYY"
-        />
+
         <label htmlFor="password">Password:</label>
         <input
           value={password}
@@ -55,6 +67,15 @@ const Signup = ({ onClose }) => {
           id="password"
           placeholder="Enter password"
         />
+        <label htmlFor="passwordConfirm">Confirm Password:</label>
+        <input
+          value={passwordConfirm}
+          onChange={(e) => setPasswordConfirm(e.target.value)}
+          type="password"
+          id="passwordConfirm"
+          placeholder="Enter password"
+        />
+
         <button type="submit">Sign Up</button>
       </form>
     </div>

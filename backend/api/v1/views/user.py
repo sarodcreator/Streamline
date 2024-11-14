@@ -4,11 +4,10 @@ import jwt
 from flask import request, abort, jsonify, make_response, current_app, Blueprint
 # from api.v1.views import app_views
 from models.user import User
-
-user_views = Blueprint('app_views', __name__, url_prefix='/user')
+from api.v1.views import app_views
 
 # sign up endpoint
-@user_views.route('/signup', strict_slashes=False, methods=['POST'])
+@app_views.route('/signup', strict_slashes=False, methods=['POST'])
 def sign_up():
     """this views handles user sign up"""
     data = request.get_json()
@@ -20,9 +19,8 @@ def sign_up():
         return jsonify({'Error': 'Password do not match'}), 400
     data.pop('password_confirm')
     # ----- i have to first search for if user exists in db -----
-    first_name = data.get('first_name')
-    last_name = data.get('last_name')
-    try_user = User.search({'first_name': first_name, 'last_name': last_name})
+    email = data.get('email')
+    try_user = User.search({'email': email})
     try:
         try_user = try_user[0]
         return jsonify({'Error': 'You have already signed up'})
@@ -33,7 +31,7 @@ def sign_up():
     new_user.save()
     return jsonify({'success': "User created successfully"}), 200
 
-@user_views.route('/login', strict_slashes=False, methods=['POST'])
+@app_views.route('/login', strict_slashes=False, methods=['POST'])
 def login():
     """this checks the login details"""
     from api.v1.app import auth
@@ -53,7 +51,7 @@ def login():
     response.set_cookie("session_id", session_id)
     return response, 200
 
-@user_views.route('/forget_pwd', strict_slashes=False, methods=['POST'])
+@app_views.route('/forget_pwd', strict_slashes=False, methods=['POST'])
 def forgot_password():
     """Allows user to request password reset"""
     from flask_mail import Message
@@ -110,7 +108,7 @@ def forgot_password():
     except Exception:
         return jsonify({'Error': 'Error sending reset link'}), 500
 
-@user_views.route('/logout', strict_slashes=False, methods=['GET'])
+@app_views.route('/logout', strict_slashes=False, methods=['GET'])
 def logout():
     """handles logout"""
     from api.v1.app import auth
@@ -118,7 +116,7 @@ def logout():
         abort(404)
     return jsonify({}), 200
 
-@user_views.route('/reset_pwd', strict_slashes=False, methods=['POST'])
+@app_views.route('/reset_pwd', strict_slashes=False, methods=['POST'])
 def reset_pwd():
     """handles reset password request"""
     import bcrypt
