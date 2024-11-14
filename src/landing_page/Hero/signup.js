@@ -2,18 +2,19 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './signup.css';
 
-const Signup = ({ onClose }) => {
+const Signup = ({ onClose, onGuestAccess }) => {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [DOB, setDOB] = useState('');
+
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
 
     try {
       await axios.post('http://localhost:3000/netflix/signup', { userName, email, DOB, password });
-      alert('Your Account has been  created successfully');
-      onClose();  // Close the sign-up form after successful signup
+      alert('Your Account has been created successfully');
+      onClose(); // Close the sign-up form after successful signup
     } catch (error) {
       alert('There was a problem, Try Again');
     }
@@ -57,6 +58,9 @@ const Signup = ({ onClose }) => {
         />
         <button type="submit">Sign Up</button>
       </form>
+      <button onClick={onGuestAccess} className="guestAccessButton">
+        Continue as Guest
+      </button>
     </div>
   );
 };
