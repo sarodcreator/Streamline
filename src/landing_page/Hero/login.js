@@ -46,7 +46,7 @@ const Login = ({ onLogin }) => {
         />
         <button type="submit">Login</button>
       </form>
-      <button className="bypass-btn" onClick={handleBypass}>Bypass Login</button>
+      <button className="bypass-btn" onClick={handleBypass}>Continue as Guest</button>
     </div>
   );
 };
