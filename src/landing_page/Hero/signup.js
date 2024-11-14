@@ -13,14 +13,19 @@ const Signup = ({ onClose }) => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:5000/netflix/signup', { user_name: userName,
+      const response = await axios.post('http://localhost:5000/netflix/signup', { user_name: userName,
         email, first_name: firstName, password, last_name: lastName, password_confirm: passwordConfirm });
-      alert('Your Account has been  created successfully');
-      onClose();  // Close the sign-up form after successful signup
+      if (response.data.success) {
+        alert('Your Account has been  created successfully');
+        onClose();
+      } else {
+      alert(response.data.Error);
+      }
     } catch (error) {
-      alert('There was a problem, Try Again');
-    }
-  };
+      console.log(error);
+    };
+  }
+
 
   return (
     <div className="signupPage">
