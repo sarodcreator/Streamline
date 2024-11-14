@@ -25,7 +25,7 @@ const requests = {
   fetchMusicMovies: `/discover/movie?api_key=${APIKEY}&with_genres=10402`,
   fetchFamilyMovies: `/discover/movie?api_key=${APIKEY}&with_genres=10751`,
   fetchTVMovies: `/discover/movie?api_key=${APIKEY}&with_genres=10770`,
-  fetchAnimeShows: `/discover/tv?api_key=${APIKEY}&with_genres=16&with_keywords=anime`,
+  fetchAnimeShows: `/discover/tv?api_key=${APIKEY}&with_genres=16&query=anime`,
   fetchRealityShows: `/discover/tv?api_key=${APIKEY}&with_genres=10764`,
   fetchGameShows: `/discover/tv?api_key=${APIKEY}&with_genres=10763`,
   fetchNewsShows: `/discover/tv?api_key=${APIKEY}&with_genres=10767`,
