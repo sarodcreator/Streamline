@@ -29,9 +29,9 @@ function Home() {
                     <Row title='Anime' fetchUrl={Requests.fetchAnimeShows} />
                     <Row title='Back in Time' fetchUrl={Requests.fetchHistoryMovies} />
                     <Row title='Sing Along' fetchUrl={Requests.fetchMusicMovies} />
-                    <Row title='Trending' fetchUrl={Requests.fetchMysteryMovies} />
-                    <Row title='Action' fetchUrl={Requests.fetchGameShows} />
-                    <Row title='Documentary' fetchUrl={Requests.fetchKidsMovies} />
+                    <Row title='Mystery' fetchUrl={Requests.fetchMysteryMovies} />
+                    <Row title='Game Shows' fetchUrl={Requests.fetchGameShows} />
+                    <Row title='For Kids' fetchUrl={Requests.fetchKidsMovies} />
                 </div>
             </div>
             <Footer />
