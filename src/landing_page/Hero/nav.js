@@ -51,7 +51,7 @@ const Hero = () => {
           </div>
         </div>
       )}
-      {LogInForm && <Login onLogin={handleLogin} />}
+      {LogInForm && <Login onClick={navigate("/movies"} />}
     </div>
   );
 };
